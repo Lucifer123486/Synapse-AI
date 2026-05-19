@@ -30,7 +30,7 @@ export default function ResultsPage() {
       fetch(`${BACKEND}/decision/report/${sessionId}`)
         .then(r => r.json())
         .then(data => {
-          if (data && !data.detail) setResults(prev => ({ ...prev, ...data }));
+          if (data && !data.detail) setResults((prev: any) => ({ ...prev, ...data }));
         })
         .catch(() => {});
     }
